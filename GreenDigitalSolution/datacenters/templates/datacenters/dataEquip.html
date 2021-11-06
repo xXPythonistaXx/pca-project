@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}Equipamentos Eletrônicos{% endblock %}
+
+{% block content %}
+<div class="col-md-6" >  
+    <div class="card" style="width: 40rem; position: center;">
+        <div class="card-body">
+          <h5 class="card-title">{{datacenter.titulo}}</h5>
+          <p class="card-text">{{datacenter.descricao}}</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Categoria: {{datacenter.categoria}}</li>
+          <li class="list-group-item">Descrição sustentável: {{datacenter.sustentavel}}</li>
+          <li class="list-group-item">Preço: {{datacenter.preco}}</li>
+          <li class="list-group-item">Setor: {{datacenter.setor}}</li>
+          <li class="list-group-item">Consumo elétrico(K/W): {{datacenter.consumo_eletrico}}</li>
+          <li class="list-group-item">Criam em: {{datacenter.created_at}}</li>
+        </ul>
+        <div class="card-body">
+          <a href="/edit/{{datacenter.id}}" class="card-link">Editar equipamento<i class="fas fa-edit"></i></a>
+        </div>
+        <div class="card-body">
+            <a href="/delete/{{datacenter.id}}" class="card-link">Excluir equipamento<i class="fas fa-trash"></i></a>
+          </div>
+      </div>
+
+</div>
+{% endblock %}
